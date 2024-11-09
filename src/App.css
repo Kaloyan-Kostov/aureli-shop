@@ -1,0 +1,27 @@
+:root {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80rem;
+  box-sizing: border-box;
+  position: relative;
+  background-color: rgb(244, 245, 247);
+}
+
+.bg-new-black {
+  background-color: rgb(244, 245, 247);
+}
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("./assets/fonts/Orbitron-Regular.ttf");
+  font-family: "DynamicWave";
+  src: url("./assets/fonts/DynamicWave.otf");
+}
+
+body {
+  font-family: "Orbitron", sans-serif;
+}
+
+.aureli {
+  font-family: "DynamicWave", sans-serif;
+}
