@@ -7,6 +7,8 @@ import {
 
 import { useState } from "react";
 import logo from "../../../public/aureli-logo.svg";
+import { Link, useNavigate } from "react-router-dom";
+import { defaultURL } from "../../helpers/constants";
 
 const dropdownMenus = [
   {
@@ -16,8 +18,8 @@ const dropdownMenus = [
     additionalClass: "w-[200vw] max-w-[50.25rem]",
     title: "Menu 1",
     items: [
-      { name: "New in", link: "#" },
-      { name: "Special Price", link: "#" },
+      { name: "FALL '24 DROP 1", type: "new" },
+      { name: "FALL '24 DROP 2", type: "new" },
     ],
   },
   {
@@ -27,8 +29,9 @@ const dropdownMenus = [
     additionalClass: "w-[200vw] max-w-[46rem]",
     title: "Menu 2",
     items: [
-      { name: "New in", link: "#" },
-      { name: "Special Price", link: "#" },
+      { name: "Jade label", label: "jade", type: "label" },
+      { name: "Gold label", label: "gold", type: "label" },
+      { name: "'Thyst label", label: "thyst", type: "label" },
     ],
   },
   {
@@ -38,40 +41,28 @@ const dropdownMenus = [
     additionalClass: "w-[200vw] max-w-[40.25rem]",
     title: "Menu 3",
     items: [
-      { name: "Services", link: "#" },
+      { name: "Limited", link: "#" },
       { name: "FAQ", link: "#" },
     ],
   },
-  //   {
-  //     id: 4,
-  //     name: "Accessories",
-  //     title: "Menu 4",
-  //     items: [
-  //       { name: "Blog", link: "#" },
-  //       { name: "Careers", link: "#" },
-  //       { name: "Testimonials", link: "#" },
-  //     ],
-  //   },
   {
     id: 4,
     name: "#ComingSoon",
     dropdownClass: "dropdown-bottom",
     additionalClass: "w-[200vw] max-w-[34rem]",
     title: "Menu 4",
-    items: [
-      { name: "Privacy Policy", link: "#" },
-      { name: "Terms of Service", link: "#" },
-    ],
+    items: [{ name: "Foretaste", link: "#" }],
   },
 ];
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(null);
-
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   return (
     <div className="navbar sticky top-0 z-50 p-0 bg-new-white sm:w-[25%] md:w-[50%] lg:w-[100%]">
       <div className="navbar-start">
-        <a href="#">
+        <a href="" onClick={() => navigate(`${defaultURL}/`)}>
           <img src={logo} className="h-14" />
         </a>
       </div>
@@ -104,11 +95,19 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className={`menu menu-md dropdown-content bg-zinc-900 rounded-box z-[1] h-screen max-h-96 p-2 shadow rounded-t-none border-t-4 border-base-100 ${menu.additionalClass}`}
+              className={`menu menu-md dropdown-content bg-zinc-900 rounded-box z-[1] max-h-96 p-2 shadow rounded-t-none border-t-4 border-base-100 ${menu.additionalClass}`}
             >
               {menu.items.map((item, itemIndex) => (
                 <li key={itemIndex}>
-                  <a href={item.link}>{item.name}</a>
+                  <Link
+                    to={
+                      item.type === "label"
+                        ? `${defaultURL}/label/${item.label}`
+                        : `${defaultURL}/${item.type}`
+                    }
+                  >
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
