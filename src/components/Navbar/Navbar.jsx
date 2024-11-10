@@ -5,13 +5,13 @@ import {
   UserIcon,
 } from "../../helpers/icons";
 
-import logo from "../../assets/logo.svg";
 import { useState } from "react";
+import logo from "../../../public/aureli-logo.svg";
 
 const dropdownMenus = [
   {
     id: 1,
-    name: "Men",
+    name: "New in",
     dropdownClass: "dropdown-content",
     additionalClass: "w-[200vw] max-w-[50.25rem]",
     title: "Menu 1",
@@ -22,7 +22,7 @@ const dropdownMenus = [
   },
   {
     id: 2,
-    name: "Women",
+    name: "Crucials",
     dropdownClass: "dropdown-bottom",
     additionalClass: "w-[200vw] max-w-[46rem]",
     title: "Menu 2",
@@ -54,7 +54,7 @@ const dropdownMenus = [
   //   },
   {
     id: 4,
-    name: "#Coming soon",
+    name: "#ComingSoon",
     dropdownClass: "dropdown-bottom",
     additionalClass: "w-[200vw] max-w-[34rem]",
     title: "Menu 4",
@@ -69,11 +69,10 @@ const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(null);
 
   return (
-    <div className="navbar bg-new-black sticky top-0 z-50 p-0">
+    <div className="navbar sticky top-0 z-50 p-0 bg-new-white sm:w-[25%] md:w-[50%] lg:w-[100%]">
       <div className="navbar-start">
-        {/* <img src={logo} alt="Logo" width="320px" /> */}
-        <a href="" className="text-[40px] aureli px-4 decoration-wavy">
-          auréli
+        <a href="#">
+          <img src={logo} className="h-14" />
         </a>
       </div>
       <div className="navbar-center flex gap-2 bg-zinc-900">

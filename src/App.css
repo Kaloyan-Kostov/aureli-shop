@@ -7,7 +7,7 @@
   background-color: rgb(244, 245, 247);
 }
 
-.bg-new-black {
+.bg-new-white {
   background-color: rgb(244, 245, 247);
 }
 
@@ -24,4 +24,11 @@ body {
 
 .aureli {
   font-family: "DynamicWave", sans-serif;
+}
+
+.new-btn {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  background: transparent;
 }
