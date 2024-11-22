@@ -11,6 +11,12 @@ import g9 from "../../../assets/img/gold/g9.png";
 import p1 from "../../../assets/img/thyst/p1.png";
 import p2 from "../../../assets/img/thyst/p2.png";
 import p3 from "../../../assets/img/thyst/p3.png";
+import p4 from "../../../assets/img/thyst/p4.png";
+import p5 from "../../../assets/img/thyst/p5.png";
+import p6 from "../../../assets/img/thyst/p6.png";
+import p7 from "../../../assets/img/thyst/p7.png";
+import p8 from "../../../assets/img/thyst/p8.png";
+import p9 from "../../../assets/img/thyst/p9.png";
 
 const sections = [
   {
@@ -23,7 +29,7 @@ const sections = [
   },
   {
     name: "Thyst",
-    img: [p1, p2, p3],
+    img: [p1, p2, p3, p4, p5, p6, p7, p8, p9],
   },
 ];
 
@@ -52,6 +58,7 @@ const Crucials = () => {
               key={index}
               src={image}
               alt={`${currentSection.name} ${index + 1}`}
+              loading="lazy"
               className="rounded-lg max-w-[400px]"
             />
           ))
